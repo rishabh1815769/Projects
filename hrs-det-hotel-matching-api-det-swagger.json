@@ -1,0 +1,44 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "hrs-det-hotel-matching-api"
+  },
+  "host" : "matching.dec.data.hrs.cc",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/batchinference" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "hotels",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/hotels"
+          }
+        } ],
+        "responses" : { }
+      }
+    }
+  },
+  "definitions" : {
+    "hotels" : {
+      "properties" : {
+        "hotelcountry" : {
+          "type" : "string"
+        },
+        "hoteladdress" : {
+          "type" : "string"
+        },
+        "hotelcity" : {
+          "type" : "string"
+        },
+        "hotelname" : {
+          "type" : "string"
+        }
+      },
+      "type" : "array"
+    }
+  }
+}
